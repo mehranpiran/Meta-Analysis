@@ -238,8 +238,11 @@ filtered.eset
 N.F.expression.matrix = exprs(filtered.eset)
 dim(N.F.expression.matrix)
 
+# Most upregulated genes
 p1 = rownames(Table[which(Table$logFC > 6) , ])
 p1
+
+# Most downregulated genes
 p2 = rownames(Table[which(Table$logFC < - 4) , ])
 p2
 
@@ -252,6 +255,7 @@ probnames = rownames(N.F.expression.matrix)
 gene.symbol = getSYMBOL(probnames, "hgu133plus2.db")
 rownames(N.F.expression.matrix) = gene.symbol
 
+# Housekeeping genes
 HG = c("ACTB" , "GAPDH" , "TBP" , "RPLP0")
 
 
